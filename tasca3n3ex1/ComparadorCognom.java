@@ -4,7 +4,7 @@ import java.text.Collator;
 import java.util.Comparator;
 import java.util.Locale;
 
-public class ComparadorNombreDesc implements Comparator<Persona> {
+public class ComparadorCognom implements Comparator<Persona> {
 
 	@Override
 	public int compare(Persona p1, Persona p2) {
@@ -12,7 +12,7 @@ public class ComparadorNombreDesc implements Comparator<Persona> {
 		Collator collatorPrimari = Collator.getInstance(new Locale("es")); // necessari per a tenir en compte ordenació
 																			// Español (accents ñ etc)
 		collatorPrimari.setStrength(Collator.PRIMARY);
-		return collatorPrimari.compare(p2.getNom(), p1.getNom());
+		return collatorPrimari.compare(p1.getCognom(), p2.getCognom());
 	}
 
 }

@@ -18,7 +18,7 @@ public class Tasca3n3ex1 {
 		// TODO Auto-generated method stub
 		ArrayList<Persona> personas = new ArrayList<Persona>();
 		HashSet<String> dnis = new HashSet<String>();
-		final String PATH = "C:\\Users\\jmpca\\git\\Itacademy\\Sprint1\\src\\tasca3n3ex1\\Personas.csv";
+		final String PATH = "C:\\Users\\formacio\\git\\Itacademy\\Sprint1\\src\\tasca3n3ex1\\Personas.csv";
 		int option;
 		int sizeHashSet;
 		Persona p1;
@@ -40,9 +40,9 @@ public class Tasca3n3ex1 {
 				break;
 			case 1:
 				p1 = introduirPersona();
-				sizeHashSet = dnis.size();
+				sizeHashSet = dnis.size(); 
 				dnis.add(p1.getDni());
-				if (sizeHashSet == dnis.size()) {
+				if (sizeHashSet == dnis.size()) { //S'ha pogut afegir el dni al hashSet? (no esta repetit?)
 					System.out.println(
 							"No s'ha pogut afegir a la persona\n No es pot afegir una persona amb un DNI igual a una ja existent");
 				} else {
@@ -58,17 +58,22 @@ public class Tasca3n3ex1 {
 				mostrarPersones(personas);
 				break;
 			case 4:
+				Collections.sort(personas, new ComparadorCognom());
+				mostrarPersones(personas);
 				break;
 			case 5:
+				Collections.sort(personas, new ComparadorCognomDesc());
+				mostrarPersones(personas);
 				break;
 			case 6:
+				Collections.sort(personas, new ComparadorDni());
+				mostrarPersones(personas);
 				break;
 			case 7:
+				Collections.sort(personas, new ComparadorDniDesc());
+				mostrarPersones(personas);
 				break;
-			case 8:
-				break;
-			case 9:
-				break;
+
 			default:
 				System.out.println("Introdueix un enter que correspongui a una de les opcions disponibles.");
 				break;
@@ -212,16 +217,14 @@ public class Tasca3n3ex1 {
 	public static void mostrarPersones(ArrayList<Persona> persones) { // no queda bé pero no em vull matar a fer que
 																		// quedi bonic
 		System.out.println("___Nom_________ ____Cognoms______________ ____NIF_______ ");
-		
+
 		for (int i = 0; i < persones.size(); i++) {
 
 			System.out.print(persones.get(i).getNom());
-			
-			System.out.print("            "+ persones.get(i).getCognom());
-			
-			
-			
-			System.out.println("         "+ persones.get(i).getDni());
+
+			System.out.print("            " + persones.get(i).getCognom());
+
+			System.out.println("         " + persones.get(i).getDni());
 		}
 	}
 }
