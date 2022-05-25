@@ -1,0 +1,6 @@
+la: 5 points
+joan: 4 points
+lolo: 1 points
+h: 2 points
+lala lal a al la: 4 points
+lalala: 4 points
