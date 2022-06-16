@@ -40,11 +40,11 @@ public class Tasca3n2ex2 {
 		restaurantsList = Arrays.asList(restaurantsArray);
 		Collator collatorPrimari = Collator.getInstance(new Locale("es")); // necessari per a tenir en compte ordenació
 																			// Español
-		collatorPrimari.setStrength(Collator.PRIMARY); //ignorar accents etc
-		
+		collatorPrimari.setStrength(Collator.PRIMARY); // ignorar accents etc
 
 		Collections.sort(restaurantsList, new Comparator<Restaurant>() { // clase anonima, si la fés servir mes cops, ho
-																			// ficaria en un metode d'una classe i faria lambda
+																			// ficaria en un metode d'una classe i faria
+																			// lambda
 																			// method reference?¿ es correcte el
 																			// raonament?
 			public int compare(Restaurant r1, Restaurant r2) {
@@ -53,7 +53,7 @@ public class Tasca3n2ex2 {
 				collatorPrimari.setStrength(Collator.PRIMARY);
 				if (collatorPrimari.compare(r1.getNom(), r2.getNom()) != 0) {
 					return collatorPrimari.compare(r1.getNom(), r2.getNom());
-				} else {                            // només si el nom es igual, miro la puntuacio
+				} else { // només si el nom es igual, miro la puntuacio
 					if (r1.getPuntuacio() > r2.getPuntuacio()) {
 						return -1;
 					} else {

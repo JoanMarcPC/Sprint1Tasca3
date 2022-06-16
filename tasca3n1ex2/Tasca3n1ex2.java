@@ -22,14 +22,11 @@ public class Tasca3n1ex2 {
 		llista1.add(8);
 		llista1.add(9);
 
-		
-		
 		ListIterator<Integer> it1 = llista1.listIterator();
 		ListIterator<Integer> it2 = llista2.listIterator();
 
-		
 		while (it1.hasNext()) {
-			
+
 			it2.add(it1.next()); // afegeixo a la llista2 el contingut de llista1 en ordre ascendent
 			it2.previous(); // enrere per afegir-los en ordre invers
 

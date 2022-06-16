@@ -40,9 +40,9 @@ public class Tasca3n3ex1 {
 				break;
 			case 1:
 				p1 = introduirPersona();
-				sizeHashSet = dnis.size(); 
+				sizeHashSet = dnis.size();
 				dnis.add(p1.getDni());
-				if (sizeHashSet == dnis.size()) { //S'ha pogut afegir el dni al hashSet? (no esta repetit?)
+				if (sizeHashSet == dnis.size()) { // S'ha pogut afegir el dni al hashSet? (no esta repetit?)
 					System.out.println(
 							"No s'ha pogut afegir a la persona\n No es pot afegir una persona amb un DNI igual a una ja existent");
 				} else {

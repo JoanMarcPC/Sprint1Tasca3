@@ -71,35 +71,15 @@ public class Tasca3n1ex3 {
 		Scanner input = new Scanner(System.in);
 		System.out.println("Enter your name");
 		name += input.nextLine();
-		
+
 		return name;
 	}
 
 	public static String[] readString(String inputString) {
 		String[] countryCapital = inputString.split(" ", 2); // a la posició 0 queda country y a la posició 1 capital
 
-		// No entenc perque no funciona
-		/*
-		 * countryCapital[0].replace("_", " "); countryCapital[1].replace("_", " ");
-		 */
-
-		if (countryCapital[0].contains("_")) {
-			String[] country = countryCapital[0].split("_");
-			countryCapital[0] = country[0]; // faig aixo pq no conec altra manera de treure _
-			for (int i = 1; i < country.length; i++) {
-				countryCapital[0] += " " + country[i];
-			}
-
-		}
-
-		if (countryCapital[1].contains("_")) {
-			String[] capital = countryCapital[1].split("_");
-			countryCapital[1] = capital[0];
-			for (int i = 1; i < capital.length; i++) {
-				countryCapital[1] += " " + capital[i];
-			}
-
-		}
+		countryCapital[0] = countryCapital[0].replace("_", " ");
+		countryCapital[1] = countryCapital[1].replace("_", " ");
 
 		return countryCapital;
 	}
@@ -109,7 +89,7 @@ public class Tasca3n1ex3 {
 			BufferedReader bf = new BufferedReader(new InputStreamReader(new FileInputStream(readPath), "utf-8"));
 			// BufferedReader bf = new BufferedReader( new
 			// FileReader("C:\\Users\\jmpca\\git\\Itacademy\\Sprint1\\src\\tasca3n1ex3\\countries.txt"));
-			//  sense codificació
+			// sense codificació
 
 			String inputString = "";
 			String[] countryCapital;
@@ -174,7 +154,8 @@ public class Tasca3n1ex3 {
 				score += 1;
 			} else {
 				System.out.println("You lose...");
-				System.out.println("The capital of "+ country +" is " + game.get(country)+"\nPress enter to continue");
+				System.out.println(
+						"The capital of " + country + " is " + game.get(country) + "\nPress enter to continue");
 			}
 
 			input.nextLine(); // netejar el scanner
@@ -184,7 +165,6 @@ public class Tasca3n1ex3 {
 		return score;
 
 	}
-	
 
 	public static void write(String name, int score, String path) {
 		String nameScore = name + ": " + score + " points";
